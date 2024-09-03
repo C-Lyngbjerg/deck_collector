@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mana.small {
+    height: 1em;
+    width: 1em;
+}
+.mana.medium {
+    height: 2em;
+    width: 2em;
+}
+.mana.large {
+    height: 4em;
+    width: 4em;
+}

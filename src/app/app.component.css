@@ -1,0 +1,21 @@
+  .sidenav-content {
+    display: flex !important;
+}
+  
+.deck-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.deck{
+    min-width: 25rem;
+}
+
+html, body, main {
+    margin:0px;
+    height:100%;
+}
+
+.sidenav-container{
+    min-height: 100%;
+}

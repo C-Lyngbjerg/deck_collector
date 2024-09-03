@@ -1,0 +1,39 @@
+<mat-card appearance="outlined" class="deck">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>
+        {{ deck.name }}
+      </mat-card-title>
+      <div>
+        <img
+          class="mana medium"
+          src="/mana/{{ symbol }}.png"
+          alt="Color Symbol"
+          *ngFor="let symbol of deck.commander.colorId.colors.split(' ', 5)"
+        />
+      </div>
+      <mat-card-subtitle>{{ deck.commander.name }}</mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- <mat-expansion-panel
+      (opened)="panelOpenState.set(true)"
+      (closed)="panelOpenState.set(false)"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title> Self aware panel </mat-panel-title>
+        <mat-panel-description>
+          {{ panelOpenState() ? "" : "closed" }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p>I'm visible because I am open</p>
+    </mat-expansion-panel> -->
+    <div>{{ deck.description }}</div>
+    <div>{{ deck.primer }}</div>
+  </mat-card-content>
+
+  <mat-card-footer></mat-card-footer>
+  <mat-card-actions>Edit</mat-card-actions>
+</mat-card>
