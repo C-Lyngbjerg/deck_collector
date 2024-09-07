@@ -34,6 +34,23 @@
     <div>{{ deck.primer }}</div>
   </mat-card-content>
 
-  <mat-card-footer></mat-card-footer>
-  <mat-card-actions>Edit</mat-card-actions>
+  <mat-card-footer> </mat-card-footer>
+  <mat-card-actions style="justify-content: space-around">
+    <img class="mana medium" src="/icons/edit.png" alt="Edit"
+    matTooltip="Edit deck" />
+    <img class="mana medium" src="/icons/list.png" alt="Tags"
+    matTooltip="{{deck.tags}}" />
+    <img
+      class="mana medium"
+      src="/icons/{{ stageVisuals[deck.stage].iconName }}.png"
+      alt="Stage"
+      matTooltip="{{ stageVisuals[deck.stage].tooltip }}"
+    />
+    <img
+      class="mana medium"
+      src="/icons/{{ powerLevelVisuals[deck.powerLevel].iconName }}.png"
+      alt="Power level"
+      matTooltip="{{ powerLevelVisuals[deck.powerLevel].tooltip }}"
+    />
+  </mat-card-actions>
 </mat-card>

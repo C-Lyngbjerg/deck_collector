@@ -1,5 +1,3 @@
-import { identity } from 'rxjs';
-
 export interface Deck {
   id: string;
   ownerId: string;
@@ -37,17 +35,38 @@ export interface Commander {
 
 export enum stageEnum {
   theoryCrafting,
-  unOwned,
+  unowned,
   built,
+  WiP,
 }
 
+export const stageVisuals: Record<number, iconVisual> = {
+  0: { iconName: 'build-circle', tooltip: 'Theorycrafting' },
+  1: { iconName: 'add-circle', tooltip: 'Unowned' },
+  2: { iconName: 'check-circle', tooltip: 'Built' },
+  3: { iconName: 'pending', tooltip: 'Work in progress' },
+};
+
 export enum powerLevelEnum {
-  yank,
-  mid,
-  optimized,
-  high,
+  lowMid,
+  midOptimized,
+  highPower,
   cEDH,
 }
+
+export const powerLevelVisuals: Record<number, iconVisual> = {
+  0: { iconName: 'radio-button-unchecked', tooltip: 'Low to mid power' },
+  1: { iconName: 'radio-button-partial', tooltip: 'mid to optimized' },
+  2: { iconName: 'radio-button-checked', tooltip: 'high power' },
+  3: { iconName: 'bolt', tooltip: 'cEDH' },
+};
+
+export interface iconVisual {
+  iconName: string;
+  tooltip: string;
+}
+
+// chat icon for tags
 
 export const colorId: Record<string, identity> = {
   Colorless: {
@@ -97,7 +116,7 @@ export const TestData: Deck[] = [
     },
     stage: stageEnum.built,
     rating: 9,
-    powerLevel: powerLevelEnum.optimized,
+    powerLevel: powerLevelEnum.midOptimized,
     description: 'description',
     primer: 'primer',
     deckLink: 'deckLink',
@@ -118,7 +137,7 @@ export const TestData: Deck[] = [
     },
     stage: stageEnum.built,
     rating: 9,
-    powerLevel: powerLevelEnum.optimized,
+    powerLevel: powerLevelEnum.lowMid,
     description: 'description',
     primer: 'primer',
     deckLink: 'deckLink',
@@ -139,7 +158,7 @@ export const TestData: Deck[] = [
     },
     stage: stageEnum.built,
     rating: 7,
-    powerLevel: powerLevelEnum.mid,
+    powerLevel: powerLevelEnum.midOptimized,
     description: 'description',
     primer: 'primer',
     deckLink: 'deckLink',
