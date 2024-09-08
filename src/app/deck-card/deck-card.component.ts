@@ -1,9 +1,14 @@
 import { Component, Input, signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { Deck, iconVisual, powerLevelVisuals, stageVisuals } from '../domain';
+import { Deck } from '../domain';
 import { CommonModule } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {
+  iconVisual,
+  VisualsService as vs,
+  visualType,
+} from '../helpers/visuals.service';
 
 @Component({
   selector: 'app-deck-card',
@@ -15,6 +20,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 export class DeckCardComponent {
   readonly panelOpenState = signal(false);
   @Input() deck!: Deck;
-  powerLevelVisuals: Record<number, iconVisual> = powerLevelVisuals;
-  stageVisuals: Record<number, iconVisual> = stageVisuals;
+  stageVisuals!: iconVisual;
+  powerLevelVisuals!: iconVisual;
+
+  ngOnInit() {
+    this.powerLevelVisuals = vs.getIconsAndTooltip(
+      this.deck,
+      visualType.powerLevel
+    );
+    this.stageVisuals = vs.getIconsAndTooltip(this.deck, visualType.stage);
+  }
 }

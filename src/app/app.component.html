@@ -10,6 +10,10 @@
       <img class="mana medium" src="/mana/R.png" alt="My image name" />
 
       <img class="mana medium" src="/mana/G.png" alt="My image name" />
+
+      <mat-list>
+        <mat-list-item *ngFor="let toDo of toDos">{{toDo}}</mat-list-item>
+       </mat-list>
     </mat-sidenav>
     <mat-sidenav-content class="sidenav-content">
       <div class="deck-container">

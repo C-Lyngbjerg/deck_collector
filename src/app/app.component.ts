@@ -4,11 +4,18 @@ import { DeckCardComponent } from './deck-card/deck-card.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 import { colorId, powerLevelEnum, stageEnum } from './domain';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DeckCardComponent, MatSidenavModule, CommonModule],
+  imports: [
+    RouterOutlet,
+    DeckCardComponent,
+    MatSidenavModule,
+    CommonModule,
+    MatListModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -99,5 +106,16 @@ export class AppComponent {
       tags: ['big mana', 'cEDH', 'combo'],
       edits: [],
     },
+  ];
+  toDos: string[] = [
+    'Make header/top bar',
+    'Sorting of decks',
+    'Implement Firebase login',
+    'Make profile page',
+    'Implement Firebase db',
+    'Plan db models',
+    'Win rate page?',
+    'Make Edit/Create modal decks',
+    ''
   ];
 }
