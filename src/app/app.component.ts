@@ -5,6 +5,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { CommonModule } from '@angular/common';
 import { colorId, powerLevelEnum, stageEnum } from './domain';
 import { MatListModule } from '@angular/material/list';
+import { DecksService } from './helpers/decks.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +22,14 @@ import { MatListModule } from '@angular/material/list';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  decks: Observable<any[]>;
+  constructor(private ds: DecksService) {
+    this.decks = ds.decks$;
+    this.decks.forEach(deck => 
+
+      console.log('decks: ', deck)
+    )
+  }
   title = 'deck_collector';
   TestDecks = [
     {
@@ -108,6 +118,7 @@ export class AppComponent {
     },
   ];
   toDos: string[] = [
+    'DONE install Firebase',
     'Make header/top bar',
     'Sorting of decks',
     'Implement Firebase login',
@@ -116,6 +127,7 @@ export class AppComponent {
     'Plan db models',
     'Win rate page?',
     'Make Edit/Create modal decks',
-    ''
+    'Setup Scryfall service',
+    'Setup Firebase service',
   ];
 }
