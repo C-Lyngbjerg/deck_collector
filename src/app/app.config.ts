@@ -5,7 +5,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { firebaseConfig } from '../environments/environment';
+import { firebaseConfig } from './shared/environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [

@@ -9,6 +9,8 @@
 }
 .deck{
     min-width: 25rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
 }
 
 html, body, main {
@@ -18,4 +20,13 @@ html, body, main {
 
 .sidenav-container{
     min-height: 100%;
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.primary{
+    background-color: var(--mat-toolbar-container-text-color, var(--mat-app-on-surface));
+    margin: 1rem;
 }

@@ -1,14 +1,14 @@
 import { Component, Input, signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { Deck } from '../domain';
+import { deck } from '../../shared/domain';
 import { CommonModule } from '@angular/common';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {
   iconVisual,
-  VisualsService as vs,
+  VisualsHelper as vs,
   visualType,
-} from '../helpers/visuals.service';
+} from '../../shared/helpers/visuals-helper.service';
 
 @Component({
   selector: 'app-deck-card',
@@ -19,7 +19,7 @@ import {
 })
 export class DeckCardComponent {
   readonly panelOpenState = signal(false);
-  @Input() deck!: Deck;
+  @Input() deck!: deck;
   stageVisuals!: iconVisual;
   powerLevelVisuals!: iconVisual;
 

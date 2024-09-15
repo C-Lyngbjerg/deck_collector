@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Deck } from '../domain';
+import { deck } from '../domain';
 
 @Injectable({
   providedIn: 'root',
 })
-export class VisualsService {
+export class VisualsHelper {
   constructor() {}
 
-  public static getIconsAndTooltip(deck: Deck, visual: visualType): iconVisual {
+  public static getIconsAndTooltip(deck: deck, visual: visualType): iconVisual {
     switch (visual) {
       case visualType.powerLevel:
         return powerLevelVisuals[deck.powerLevel];
@@ -15,7 +15,7 @@ export class VisualsService {
         return stageVisuals[deck.stage];
     }
   }
-  public static getArtCrop(deck: Deck) {}
+  public static getArtCrop(deck: deck) {}
 }
 export enum visualType {
   powerLevel,

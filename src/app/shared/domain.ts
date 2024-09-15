@@ -1,4 +1,14 @@
-export interface Deck {
+export interface addEditDeckData {
+  deck: deck,
+  dialogType:dialogTypeEnum
+}
+
+export enum dialogTypeEnum{
+  add,
+  edit
+}
+
+export interface deck {
   id: string;
   ownerId: string;
   name: string;
@@ -81,7 +91,7 @@ export interface identity {
   bgColors: string[];
 }
 
-export const TestData: Deck[] = [
+export const TestData: deck[] = [
   {
     id: '1',
     ownerId: '1',
